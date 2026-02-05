@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="ECommerceInventory.API/ECommerceInventory.API.csproj" />
+    <Project Path="ECommerceInventory.Application/ECommerceInventory.Application.csproj" />
+    <Project Path="ECommerceInventory.Domain/ECommerceInventory.Domain.csproj" />
+    <Project Path="ECommerceInventory.Infrastructure/ECommerceInventory.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ECommerceInventory.UnitTests/ECommerceInventory.UnitTests.csproj" />
+  </Folder>
+</Solution>
