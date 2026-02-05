@@ -1,8 +1,8 @@
-# ?? ECommerce Inventory System
+﻿# 🛒 ECommerce Inventory System
 
 A modern, production-ready e-commerce inventory management system built with .NET 10, featuring clean architecture, advanced security, and enterprise-grade patterns.
 
-## ?? Table of Contents
+## 📋 Table of Contents
 
 - [Features](#-features)
 - [Architecture](#-architecture)
@@ -17,7 +17,7 @@ A modern, production-ready e-commerce inventory management system built with .NE
 - [Contributing](#-contributing)
 - [Documentation](#-documentation)
 
-## ? Features
+## ✨ Features
 
 ### Core Functionality
 - **Product Management**: Complete CRUD operations for product catalog
@@ -34,37 +34,37 @@ A modern, production-ready e-commerce inventory management system built with .NE
 - **API Response Standardization**: Consistent response format across all endpoints
 - **Comprehensive Error Handling**: Global exception middleware with proper logging
 
-## ??? Architecture
+## 🏗️ Architecture
 
 This project follows **Clean Architecture** principles with clear separation of concerns:
 
 ```
-???????????????????????????????????????????????????????
-?                  Presentation Layer                  ?
-?              (ECommerceInventory.API)                ?
-?         Controllers, Middleware, DTOs                ?
-???????????????????????????????????????????????????????
-                         ?
-???????????????????????????????????????????????????????
-?                 Application Layer                    ?
-?          (ECommerceInventory.Application)            ?
-?          Interfaces, DTOs, Contracts                 ?
-???????????????????????????????????????????????????????
-                         ?
-???????????????????????????????????????????????????????
-?                  Business Logic Layer                ?
-?             (ECommerceInventory.Domain)              ?
-?       Entities, Value Objects, Domain Logic          ?
-???????????????????????????????????????????????????????
-                         ?
-???????????????????????????????????????????????????????
-?                Infrastructure Layer                  ?
-?          (ECommerceInventory.Infrastructure)         ?
-?    Repositories, Services, Data Access, Security     ?
-???????????????????????????????????????????????????????
+┌─────────────────────────────────────────────────────┐
+│                  Presentation Layer                  │
+│              (ECommerceInventory.API)                │
+│         Controllers, Middleware, DTOs                │
+└─────────────────────────────────────────────────────┘
+                         ↓
+┌─────────────────────────────────────────────────────┐
+│                 Application Layer                    │
+│          (ECommerceInventory.Application)            │
+│          Interfaces, DTOs, Contracts                 │
+└─────────────────────────────────────────────────────┘
+                         ↓
+┌─────────────────────────────────────────────────────┐
+│                  Business Logic Layer                │
+│             (ECommerceInventory.Domain)              │
+│       Entities, Value Objects, Domain Logic          │
+└─────────────────────────────────────────────────────┘
+                         ↓
+┌─────────────────────────────────────────────────────┐
+│                Infrastructure Layer                  │
+│          (ECommerceInventory.Infrastructure)         │
+│    Repositories, Services, Data Access, Security     │
+└─────────────────────────────────────────────────────┘
 ```
 
-## ??? Tech Stack
+## 🛠️ Tech Stack
 
 - **Framework**: .NET 10
 - **Language**: C# 13
@@ -76,7 +76,7 @@ This project follows **Clean Architecture** principles with clear separation of 
 - **Testing**: xUnit, Moq
 - **Logging**: Microsoft.Extensions.Logging
 
-## ?? Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -139,36 +139,36 @@ This project follows **Clean Architecture** principles with clear separation of 
 
 See [FRESH_CLONE_SETUP.md](FRESH_CLONE_SETUP.md) for detailed setup instructions.
 
-## ?? API Documentation
+## 📚 API Documentation
 
 ### Authentication Endpoints
 
 | Method | Endpoint | Description | Auth Required |
 |--------|----------|-------------|---------------|
-| POST | `/api/auth/register` | Register a new user | ? |
-| POST | `/api/auth/login` | Login and get JWT token | ? |
-| POST | `/api/auth/logout` | Logout current session | ? |
-| POST | `/api/auth/logout-all` | Logout all sessions | ? |
-| GET | `/api/auth/sessions` | Get all active sessions | ? |
+| POST | `/api/auth/register` | Register a new user | ❌ |
+| POST | `/api/auth/login` | Login and get JWT token | ❌ |
+| POST | `/api/auth/logout` | Logout current session | ✅ |
+| POST | `/api/auth/logout-all` | Logout all sessions | ✅ |
+| GET | `/api/auth/sessions` | Get all active sessions | ✅ |
 
 ### Product Endpoints
 
 | Method | Endpoint | Description | Auth Required |
 |--------|----------|-------------|---------------|
-| GET | `/api/products` | Get all products | ? |
-| GET | `/api/products/{id}` | Get product by ID | ? |
-| POST | `/api/products` | Create new product | ? |
-| PUT | `/api/products/{id}` | Update product | ? |
-| DELETE | `/api/products/{id}` | Delete product | ? |
+| GET | `/api/products` | Get all products | ❌ |
+| GET | `/api/products/{id}` | Get product by ID | ❌ |
+| POST | `/api/products` | Create new product | ✅ |
+| PUT | `/api/products/{id}` | Update product | ✅ |
+| DELETE | `/api/products/{id}` | Delete product | ✅ |
 
 ### Order Endpoints
 
 | Method | Endpoint | Description | Auth Required |
 |--------|----------|-------------|---------------|
-| POST | `/api/orders` | Create new order | ? |
-| GET | `/api/orders` | Get user orders | ? |
-| GET | `/api/orders/{id}` | Get order by ID | ? |
-| GET | `/api/orders/{id}/status` | Get order status | ? |
+| POST | `/api/orders` | Create new order | ✅ |
+| GET | `/api/orders` | Get user orders | ✅ |
+| GET | `/api/orders/{id}` | Get order by ID | ✅ |
+| GET | `/api/orders/{id}/status` | Get order status | ✅ |
 
 ### Example Usage
 
@@ -207,87 +207,87 @@ curl -X POST http://localhost:5000/api/products \
   }'
 ```
 
-## ?? Project Structure
+## 📁 Project Structure
 
 ```
 ECommerceInventory/
-??? ECommerceInventory.API/              # Presentation Layer
-?   ??? Controllers/                     # API Controllers
-?   ?   ??? AuthController.cs
-?   ?   ??? OrdersController.cs
-?   ?   ??? ProductsController.cs
-?   ??? Middleware/                      # Custom Middleware
-?   ?   ??? AuthenticationMiddleware.cs
-?   ?   ??? ExceptionHandlingMiddleware.cs
-?   ??? Program.cs                       # Application entry point
-?   ??? appsettings.json
-?   ??? Dockerfile
-?
-??? ECommerceInventory.Application/      # Application Layer
-?   ??? DTOs/                            # Data Transfer Objects
-?   ?   ??? Auth/
-?   ?   ??? Common/
-?   ?   ??? Order/
-?   ?   ??? Product/
-?   ??? Interfaces/                      # Service & Repository Interfaces
-?       ??? Repositories/
-?       ??? Services/
-?
-??? ECommerceInventory.Domain/           # Domain Layer
-?   ??? Entities/                        # Domain Entities
-?   ?   ??? Order.cs
-?   ?   ??? OrderItem.cs
-?   ?   ??? OutboxEvent.cs
-?   ?   ??? Product.cs
-?   ?   ??? Session.cs
-?   ?   ??? User.cs
-?   ??? Discounts/                       # Discount Strategy Pattern
-?   ?   ??? IDiscountCard.cs
-?   ?   ??? PercentageDiscountCard.cs
-?   ?   ??? FixedAmountDiscountCard.cs
-?   ?   ??? DiscountCardFactory.cs
-?   ??? Enums/
-?   ?   ??? OrderStatus.cs
-?   ?   ??? PaymentStatus.cs
-?   ??? Exceptions/
-?       ??? ConcurrencyException.cs
-?
-??? ECommerceInventory.Infrastructure/   # Infrastructure Layer
-?   ??? BackgroundServices/              # Background Workers
-?   ?   ??? OutboxEventPublisherService.cs
-?   ?   ??? PaymentProcessingService.cs
-?   ??? Data/                            # Database Context
-?   ?   ??? ApplicationDbContext.cs
-?   ?   ??? ApplicationDbContextFactory.cs
-?   ??? Repositories/                    # Repository Implementations
-?   ?   ??? EfSessionRepository.cs
-?   ?   ??? InMemorySessionRepository.cs
-?   ??? Security/                        # Security Services
-?   ?   ??? ITokenGenerator.cs
-?   ?   ??? TokenGenerator.cs
-?   ?   ??? PasswordHasher.cs
-?   ??? Services/                        # Service Implementations
-?       ??? AuthService.cs
-?       ??? OrderService.cs
-?       ??? ProductService.cs
-?
-??? tests/
-?   ??? ECommerceInventory.UnitTests/    # Unit Tests
-?       ??? Concurrency/
-?       ??? Domain/
-?       ??? Helpers/
-?       ??? Security/
-?       ??? Services/
-?
-??? docker-compose.yml                    # Development Docker setup
-??? docker-compose.prod.yml               # Production Docker setup
-??? Dockerfile                            # API Docker image
-??? .dockerignore
-??? .gitignore
-??? README.md
+├── ECommerceInventory.API/              # Presentation Layer
+│   ├── Controllers/                     # API Controllers
+│   │   ├── AuthController.cs
+│   │   ├── OrdersController.cs
+│   │   └── ProductsController.cs
+│   ├── Middleware/                      # Custom Middleware
+│   │   ├── AuthenticationMiddleware.cs
+│   │   └── ExceptionHandlingMiddleware.cs
+│   ├── Program.cs                       # Application entry point
+│   ├── appsettings.json
+│   └── Dockerfile
+│
+├── ECommerceInventory.Application/      # Application Layer
+│   ├── DTOs/                            # Data Transfer Objects
+│   │   ├── Auth/
+│   │   ├── Common/
+│   │   ├── Order/
+│   │   └── Product/
+│   └── Interfaces/                      # Service & Repository Interfaces
+│       ├── Repositories/
+│       └── Services/
+│
+├── ECommerceInventory.Domain/           # Domain Layer
+│   ├── Entities/                        # Domain Entities
+│   │   ├── Order.cs
+│   │   ├── OrderItem.cs
+│   │   ├── OutboxEvent.cs
+│   │   ├── Product.cs
+│   │   ├── Session.cs
+│   │   └── User.cs
+│   ├── Discounts/                       # Discount Strategy Pattern
+│   │   ├── IDiscountCard.cs
+│   │   ├── PercentageDiscountCard.cs
+│   │   ├── FixedAmountDiscountCard.cs
+│   │   └── DiscountCardFactory.cs
+│   ├── Enums/
+│   │   ├── OrderStatus.cs
+│   │   └── PaymentStatus.cs
+│   └── Exceptions/
+│       └── ConcurrencyException.cs
+│
+├── ECommerceInventory.Infrastructure/   # Infrastructure Layer
+│   ├── BackgroundServices/              # Background Workers
+│   │   ├── OutboxEventPublisherService.cs
+│   │   └── PaymentProcessingService.cs
+│   ├── Data/                            # Database Context
+│   │   ├── ApplicationDbContext.cs
+│   │   └── ApplicationDbContextFactory.cs
+│   ├── Repositories/                    # Repository Implementations
+│   │   ├── EfSessionRepository.cs
+│   │   └── InMemorySessionRepository.cs
+│   ├── Security/                        # Security Services
+│   │   ├── ITokenGenerator.cs
+│   │   ├── TokenGenerator.cs
+│   │   └── PasswordHasher.cs
+│   └── Services/                        # Service Implementations
+│       ├── AuthService.cs
+│       ├── OrderService.cs
+│       └── ProductService.cs
+│
+├── tests/
+│   └── ECommerceInventory.UnitTests/    # Unit Tests
+│       ├── Concurrency/
+│       ├── Domain/
+│       ├── Helpers/
+│       ├── Security/
+│       └── Services/
+│
+├── docker-compose.yml                    # Development Docker setup
+├── docker-compose.prod.yml               # Production Docker setup
+├── Dockerfile                            # API Docker image
+├── .dockerignore
+├── .gitignore
+└── README.md
 ```
 
-## ?? Key Features & Patterns
+## 🎯 Key Features & Patterns
 
 ### 1. **Clean Architecture**
 - Clear separation between layers
@@ -332,7 +332,7 @@ IDiscountCard fixedDiscount = new FixedAmountDiscountCard(50, minimumAmount: 200
 // Logs errors with proper context
 ```
 
-## ?? Docker Deployment
+## 🐳 Docker Deployment
 
 ### Development
 ```bash
@@ -366,7 +366,7 @@ docker-compose down -v
 
 For detailed deployment instructions, see [DOCKER_DEPLOYMENT.md](DOCKER_DEPLOYMENT.md).
 
-## ?? Testing
+## 🧪 Testing
 
 ### Run All Tests
 ```bash
@@ -393,21 +393,21 @@ dotnet test --filter Category=Services
 ### Test Structure
 ```
 tests/ECommerceInventory.UnitTests/
-??? Concurrency/
-?   ??? ProductRepositoryTests.cs
-?   ??? StockConcurrencyTests.cs
-??? Domain/
-?   ??? DiscountTests.cs
-??? Security/
-?   ??? PasswordHasherTests.cs
-?   ??? TokenGeneratorTests.cs
-??? Services/
-    ??? AuthServiceTests.cs
-    ??? OrderServiceTests.cs
-    ??? ProductServiceTests.cs
+├── Concurrency/
+│   ├── ProductRepositoryTests.cs
+│   └── StockConcurrencyTests.cs
+├── Domain/
+│   └── DiscountTests.cs
+├── Security/
+│   ├── PasswordHasherTests.cs
+│   └── TokenGeneratorTests.cs
+└── Services/
+    ├── AuthServiceTests.cs
+    ├── OrderServiceTests.cs
+    └── ProductServiceTests.cs
 ```
 
-## ?? Security
+## 🔒 Security
 
 ### Authentication
 - JWT Bearer token-based authentication
@@ -431,7 +431,7 @@ tests/ECommerceInventory.UnitTests/
 - CORS configuration
 - Input validation
 
-## ?? Contributing
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -445,7 +445,7 @@ tests/ECommerceInventory.UnitTests/
 - Write unit tests for new features
 - Update README for significant changes
 
-## ?? Documentation
+## 📖 Documentation
 
 Additional documentation available:
 - [BEST_PRACTICES_APPLIED.md](BEST_PRACTICES_APPLIED.md) - Code quality improvements
@@ -456,20 +456,20 @@ Additional documentation available:
 - [CODE_REVIEW_FIXES.md](CODE_REVIEW_FIXES.md) - Code review findings and fixes
 - [PORTABILITY_STATUS.md](PORTABILITY_STATUS.md) - Cross-platform compatibility status
 
-## ?? License
+## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## ?? Acknowledgments
+## 🙏 Acknowledgments
 
 - Built with .NET 10
 - Inspired by Clean Architecture principles
 - Following Domain-Driven Design patterns
 
-## ?? Support
+## 💬 Support
 
 For issues, questions, or contributions, please open an issue on the GitHub repository.
 
 ---
 
-**Built with ?? using .NET 10**
+**Built with ❤️ using .NET 10**
